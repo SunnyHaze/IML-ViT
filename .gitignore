@@ -1,0 +1,7 @@
+__pycache__
+output_dir_*
+eval_dir_*
+*.log
+pretrained-weights/*
+!pretrained-weights/mae_download_page.md
+*.pth

@@ -1,9 +1,12 @@
 # IML-ViT: Benchmarking Image Manipulation Localization by Vision Transformer
 ![Powered by](https://img.shields.io/badge/Based_on-Pytorch-blue?logo=pytorch) 
+![last commit](https://img.shields.io/github/last-commit/Sunnyhaze/IML-ViT)
 ![GitHub](https://img.shields.io/github/license/Sunnyhaze/IML-ViT?logo=license)
-[![Ask Me Anything !](https://img.shields.io/badge/Official%20-Yes-1abc9c.svg)](https://GitHub.com/Sunnyhaze) 
 ![](https://img.shields.io/github/repo-size/sunnyhaze/IML-ViT?color=green)
 ![](https://img.shields.io/github/stars/sunnyhaze/IML-ViT)
+[![Ask Me Anything !](https://img.shields.io/badge/Official%20-Yes-1abc9c.svg)](https://GitHub.com/Sunnyhaze) 
+
+
 
 This repo contains an official PyTorch implementation of our paper: [IML-ViT: Benchmarking Image Manipulation Localization by Vision Transformer.](http://arxiv.org/abs/2307.14863)
 

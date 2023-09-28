@@ -1,8 +1,13 @@
 # IML-ViT: Benchmarking Image Manipulation Localization by Vision Transformer
-
---------
+![Powered by](https://img.shields.io/badge/Based_on-Pytorch-blue?logo=pytorch) 
+![GitHub](https://img.shields.io/github/license/Sunnyhaze/IML-ViT?logo=license)
+[![Ask Me Anything !](https://img.shields.io/badge/Official%20-Yes-1abc9c.svg)](https://GitHub.com/Sunnyhaze) 
+![](https://img.shields.io/github/repo-size/sunnyhaze/IML-ViT?color=green)
+![](https://img.shields.io/github/stars/sunnyhaze/IML-ViT)
 
 This repo contains an official PyTorch implementation of our paper: [IML-ViT: Benchmarking Image Manipulation Localization by Vision Transformer.](http://arxiv.org/abs/2307.14863)
+
+![overview](./images/overview.png)
 
 ## Environment
 Ubuntu LTS 20.04.1
@@ -55,7 +60,7 @@ We have prepared the [Naive IML transforms class](./utils/iml_transforms.py) and
 - These datasets will do **zero-padding** automatically. Standard augmentation methods like ImageNet normalization will also be added.
 - Both datasets can generate `edge_mask` when specifying the `edge_width` parameter. Then, this dataset will return 3 objects (image, GT, edge mask) while only 2 objects when `edge_width=None`.
 - For inference, returning the actual shape of the original image is crucial. You can set `if_return_shape=True` to get this value. 
-  
+
 ## Citation
 ```
 @misc{ma2023imlvit,

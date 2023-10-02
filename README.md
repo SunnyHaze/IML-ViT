@@ -12,7 +12,7 @@ This repo contains an official PyTorch implementation of our paper: [IML-ViT: Be
 
 
 ## News 
-- **2023.10.03** 🎉🎉 Our work that applies Contrastive learning on the image manipulation task to solve data insufficiency problem, **NCL-IML**, is accepted by ***ICCV2023***!🎉🎉
+- **2023.10.03** 🎉🎉 Our related work that applies Contrastive learning on the image manipulation task to solve data insufficiency problem, **NCL-IML**, is accepted by ***ICCV2023***!🎉🎉
   - [[paper](https://openaccess.thecvf.com/content/ICCV2023/html/Zhou_Pre-Training-Free_Image_Manipulation_Localization_through_Non-Mutually_Exclusive_Contrastive_Learning_ICCV_2023_paper.html)][[code](https://github.com/Knightzjz/NCL-IML)]
 
 ## Environment

@@ -3,5 +3,5 @@ matplotlib
 numpy
 scikit_learn
 timm
-
+fvcore
 

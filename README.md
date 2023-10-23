@@ -1,4 +1,5 @@
-# IML-ViT: Benchmarking Image Manipulation Localization by Vision Transformer
+# IML-ViT: Benchmarking Image Manipulation Localization by Vision 
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1SMH0o2tDe2CLvvIACA1-Ej2lRNDBRfyj?usp=sharing)
 ![Powered by](https://img.shields.io/badge/Based_on-Pytorch-blue?logo=pytorch) 
 ![last commit](https://img.shields.io/github/last-commit/Sunnyhaze/IML-ViT)
 ![GitHub](https://img.shields.io/github/license/Sunnyhaze/IML-ViT?logo=license)
@@ -24,14 +25,18 @@ Python 3.8
 
 PyTorch 1.11
 
-## Requirements
-You should install the packages in [requirements.txt](./requirements.txt) with `pip install -r requirements.txt` first.
-
 ## Quick Start
-### A simple Demo
-Currently, You can follow the tutorial to experience the running pipeline of IML-ViT.
-- Step 1: You should download the pre-trained IML-ViT weights from [Google Drive](https://drive.google.com/file/d/1xXJGJPW1i5j9Pc1JKd7fJmIAQkvt9jY7/view?usp=sharing) or [Baidu NetDisk](https://pan.baidu.com/s/1V-l1C6jCLBQTobrJcXDl7g?pwd=s835) and place it as `./checkpoints/iml-vit_checkpoint.pth`
-- Step 2: You can follow the instructions in [Demo.ipynb](./Demo.ipynb) to see how we pad the images and inference with the IML-ViT. 
+### Google Colab Demo [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1SMH0o2tDe2CLvvIACA1-Ej2lRNDBRfyj?usp=sharing)
+- We highly recommand you to try out our IML-ViT model on colab!
+- We also prepared a playground for you to test our model with various images on the Internet conveniently.
+  - ![](images/colab_example.png)
+
+### A simple offline Demo
+Currently, You can follow the tutorial to experience the running pipeline of IML-ViT. The only difference from the Colab version is the lack of a playground for testing online images.
+
+- Step 1: You should install the packages in [requirements.txt](./requirements.txt) with `pip install -r requirements.txt` first.
+- Step 2: You should download the pre-trained IML-ViT weights from [Google Drive](https://drive.google.com/file/d/1xXJGJPW1i5j9Pc1JKd7fJmIAQkvt9jY7/view?usp=sharing) or [Baidu NetDisk](https://pan.baidu.com/s/1V-l1C6jCLBQTobrJcXDl7g?pwd=s835) and place it as `./checkpoints/iml-vit_checkpoint.pth`
+- Step 3: You can follow the instructions in [Demo.ipynb](./Demo.ipynb) to see how we pad the images and inference with the IML-ViT. 
 
 ### Training
 This part will be released after careful proofreading of our code. Before that, you could prepare your own training code with 
@@ -68,6 +73,7 @@ We have prepared the [Naive IML transforms class](./utils/iml_transforms.py) and
 - For inference, returning the actual shape of the original image is crucial. You can set `if_return_shape=True` to get this value. 
 
 ## Citation
+If you find our work interesting or helpful, please don't hesitate to give us a star🌟 and cite our paper🥰! Your support truly encourages us!
 ```
 @misc{ma2023imlvit,
       title={IML-ViT: Benchmarking Image Manipulation Localization by Vision Transformer}, 

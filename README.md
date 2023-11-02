@@ -1,4 +1,4 @@
-# IML-ViT: Benchmarking Image Manipulation Localization by Vision 
+# IML-ViT: Benchmarking Image Manipulation Localization by Vision Transformer
 [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1SMH0o2tDe2CLvvIACA1-Ej2lRNDBRfyj?usp=sharing)
 ![Powered by](https://img.shields.io/badge/Based_on-Pytorch-blue?logo=pytorch) 
 ![last commit](https://img.shields.io/github/last-commit/Sunnyhaze/IML-ViT)

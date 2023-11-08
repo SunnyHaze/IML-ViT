@@ -27,7 +27,7 @@ PyTorch 1.11
 
 ## Quick Start
 ### Google Colab Demo [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1SMH0o2tDe2CLvvIACA1-Ej2lRNDBRfyj?usp=sharing)
-- We highly recommand you to try out our IML-ViT model on colab!
+- We highly recommend you try out our IML-ViT model on Colab!
 - We also prepared a playground for you to test our model with various images on the Internet conveniently.
   - ![](images/colab_example.png)
 
@@ -66,11 +66,16 @@ We have prepared the [Naive IML transforms class](./utils/iml_transforms.py) and
         ......
     ]
     ```
-    where "Negative" represents a totally black ground truth that doesn't needs a path(all authentic)
+    where "Negative" represents a totally black ground truth that doesn't need a path(all authentic)
   - `mani_dataset` which loads images and ground truth pairs automatically from a directory having sub-directories named `Tp` (for input images) and `Gt` |(for ground truths). This class will generate the pairs using the sorted `os.listdir()` function. 
 - These datasets will do **zero-padding** automatically. Standard augmentation methods like ImageNet normalization will also be added.
 - Both datasets can generate `edge_mask` when specifying the `edge_width` parameter. Then, this dataset will return 3 objects (image, GT, edge mask) while only 2 objects when `edge_width=None`.
 - For inference, returning the actual shape of the original image is crucial. You can set `if_return_shape=True` to get this value. 
+
+## Links
+If you want to train this Model with the CASIAv2 dataset, we provide a revised version of CASIAv2 datasets, which corrected several mistakes in the original datasets provided by the author. Details can be found in the [link](https://github.com/SunnyHaze/CASIA2.0-Corrected-Groundtruth) shown below:
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Sunnyhaze&repo=CASIA2.0-Corrected-Groundtruth)](https://github.com/SunnyHaze/CASIA2.0-Corrected-Groundtruth)
 
 ## Citation
 If you find our work interesting or helpful, please don't hesitate to give us a star🌟 and cite our paper🥰! Your support truly encourages us!

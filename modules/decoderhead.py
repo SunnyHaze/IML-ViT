@@ -46,7 +46,16 @@ class PredictHead(nn.Module):
                 feature_channels : list,
                 embed_dim = 256,
                 predict_channels : int = 1,
+                norm : str = "BN"
                 ) -> None:
+        """
+        We tested three different types of normalization in the decoder head, and they may yield different results due to dataset configurations and other factors.
+        Some intuitive conclusions are as follows:
+            - "LN" -> Layer norm : The fastest convergence, but poor generalization performance.
+            - "BN" Batch norm : When include authentic images during training, set batchsize = 2 may have poor performance. But if you can train with larger batchsize (e.g. A40 with 48GB memory can train with batchsize = 4) It may performs better.
+            - "IN" Instance norm : A form that can definitely converge, equivalent to a batchnorm with batchsize=1. When abnormal behavior is observed with BatchNorm, one can consider trying Instance Normalization. It's important to note that in this case, the settings should include setting track_running_stats and affine to True, rather than the default settings in PyTorch.
+        """
+        
         super().__init__()
         c1_in_channel, c2_in_channel, c3_in_channel, c4_in_channel, c5_in_channel = feature_channels
         assert len(feature_channels) == 5 , "feature_channels must be a list of 5 elements"
@@ -61,8 +70,15 @@ class PredictHead(nn.Module):
             out_channels= embed_dim,
             kernel_size= 1
         )
-        self.norm = nn.BatchNorm2d(embed_dim)
-        # self.norm = LayerNorm(embed_dim)
+        
+        assert norm in ["LN", "BN", "IN"], "Argument error when initialize the predict head : Norm argument should be one of the 'LN', 'BN' , 'IN', which represent Layer_norm, Batch_norm and Instance_norm"
+        
+        if norm == "LN":
+            self.norm = LayerNorm(embed_dim)
+        elif norm == "BN" :
+            self.norm = nn.BatchNorm2d(embed_dim)
+        else:
+            self.norm = nn.InstanceNorm2d(embed_dim, track_running_stats=True, affine=True)
 
         self.dropout = nn.Dropout()
         

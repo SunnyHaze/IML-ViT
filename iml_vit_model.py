@@ -16,24 +16,36 @@ class iml_vit_model(nn.Module):
         # ViT backbone:
         input_size = 1024,
         patch_size = 16,
+        embed_dim = 768,
         vit_pretrain_path = None, # wether to load pretrained weights
         # Simple_feature_pyramid_network:
         fpn_channels = 256,
         fpn_scale_factors = (4.0, 2.0, 1.0, 0.5),
-        embed_dim = 768,
+
         # MLP embedding:
         mlp_embeding_dim = 256,
+        # Decoder head norm
+        predict_head_norm = "BN",
         # Edge loss:
         edge_lambda = 20,
     ):
         """init iml_vit_model
         # TODO : add more args
         Args:
-            encoder_net (nn.Module): encoder network
-            featurePyramid_net (nn.Module): feature extractor
-            kernel_size_of_edge_generator (int, optional): kernel size for edge generator for 0-1 mapping. Defaults to 5.
-            perceptual_loss (str, optional): choose bewteen 'imagenet' and 'mantranet'. Defaults to 'imagenet'.
-            perceptual_loss_path (str) : path to the pretrained weights of the perceptual loss. Defaults to None.
+            input_size (int): size of the input image, defalut to 1024
+            patch_size (int): patch size of Vision Transformer
+            embed_dim (int): embedding dim for the ViT
+            vit_pretrain_path (str): the path to initialize the model before start training
+            fpn_channels (int): the number of embedding channels for simple feature pyraimd
+            fpn_scale_factors(list(float, ...)) : the rescale factor for each SFPN layers.
+            mlp_embedding dim: dim of mlp, i.e. decoder head
+            predict_head_norm: the norm layer of predict head, need to select amoung 'BN', 'IN' and "LN"
+                                We tested three different types of normalization in the decoder head, and they may yield different results due to dataset configurations and other factors.
+                            Some intuitive conclusions are as follows:
+                                - "LN" -> Layer norm : The fastest convergence, but poor generalization performance.
+                                - "BN" Batch norm : When include authentic images during training, set batchsize = 2 may have poor performance. But if you can train with larger batchsize (e.g. A40 with 48GB memory can train with batchsize = 4) It may performs better.
+                                - "IN" Instance norm : A form that can definitely converge, equivalent to a batchnorm with batchsize=1. When abnormal behavior is observed with BatchNorm, one can consider trying Instance Normalization. It's important to note that in this case, the settings should include setting track_running_stats and affine to True, rather than the default settings in PyTorch.
+            edge_lambda(float) : the hyper-parameter for edge loss (lambda in our paper)
         """
         super(iml_vit_model, self).__init__()
         self.input_size = input_size
@@ -77,7 +89,9 @@ class iml_vit_model(nn.Module):
         )
         # MLP predict head
         self.predict_head = PredictHead(
-            feature_channels=[fpn_channels for i in range(5)], embed_dim=mlp_embeding_dim
+            feature_channels=[fpn_channels for i in range(5)], 
+            embed_dim=mlp_embeding_dim,
+            norm=predict_head_norm  # important! may influence the results
         )
         # Edge loss hyper-parameters    
         self.BCE_loss = nn.BCEWithLogitsLoss()
@@ -117,7 +131,6 @@ class iml_vit_model(nn.Module):
         mask_pred = F.interpolate(x, size = (self.input_size, self.input_size), mode='bilinear', align_corners=False)
         
         # compute the loss
-        # loss = predict_loss + lambda * edge_loss    # default: lambda == 20
         predict_loss = self.BCE_loss(mask_pred, masks)
         edge_loss = F.binary_cross_entropy_with_logits(
             input = mask_pred,

@@ -72,8 +72,6 @@ class EdgeGenerator(torch.nn.Module):
     
     
 """Codes below are for testing"""
-
-
 if __name__ == '__main__':
     lists = ['NC2016_1504.jpg', '519_mask.jpg', '526_mask.jpg', '528_mask.jpg', '534_mask.jpg']
 
@@ -85,7 +83,7 @@ if __name__ == '__main__':
         plt.subplot(1, 4, 1)
         plt.imshow(img, cmap='gray')
         print(img)
-        Edge = Edge_generator(kernel_size=11)
+        Edge = EdgeGenerator(kernel_size=11)
         
         raw_img = img.view(1, 1, img.shape[0], img.shape[1])
 

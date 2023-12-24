@@ -1,24 +1,12 @@
 import torch
 from torch import nn
 import warnings
-
 from timm.models.layers import DropPath, Mlp, trunc_normal_
-
 from fvcore.nn.distributed import differentiable_all_reduce
 import fvcore.nn.weight_init as weight_init
-
 import torch.distributed as dist
 from torch.nn import functional as F
-# if __name__ == '__main__':
-#     from detectron2 import env 
-#     from detectron2 import comm
-# else:
-#     from .detectron2 import env 
-#     from .detectron2 import comm
-    
-
 import math
-
 
 """
 Thanks for the open-source of detectron2, part of codes are from their implementation:
@@ -1101,7 +1089,11 @@ class SimpleFeaturePyramid(nn.Module):
         assert len(self._out_features) == len(results)
         return {f: res for f, res in zip(self._out_features, results)}
 
+"""
+Code below is for testing
+"""
 if __name__ == '__main__':
+
     from functools import partial
     embed_dim, depth, num_heads, dp = 768, 12, 12, 0.1
 

@@ -180,7 +180,7 @@ def get_albu_transforms(type_ = 'train', outputsize = 1024):
     if type_ == 'train':
         trans = albu.Compose([
             # Rescale the input image by a random factor between 0.8 and 1.2
-            albu.RandomScale(scale_limit=0.5, p=1), 
+            albu.RandomScale(scale_limit=0.2, p=1), 
             RandomCopyMove(p = 0.1),
             RandomInpainting(p = 0.1),
             # Flips
@@ -203,7 +203,7 @@ def get_albu_transforms(type_ = 'train', outputsize = 1024):
             # Blur
             albu.GaussianBlur(
                 blur_limit = (3, 7),
-                p = 0.3
+                p = 0.2
             ),
         ])
     

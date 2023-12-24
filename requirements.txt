@@ -4,4 +4,4 @@ numpy
 scikit_learn
 timm
 fvcore
-
+tensorboard

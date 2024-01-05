@@ -51,11 +51,12 @@ First, you may prepare the dataset to fit the protocol of our dataloader for a q
     ```
     [
         [
-          "/Dataset/CASIAv1/Tp/image1.jpg",
-          "/Dataset/CASIAv2/Gt/image1.jpg"
+          "/Dataset/CASIAv2/Tp/Tp_D_NRN_S_N_arc00013_sec00045_11700.jpg",
+          "/Dataset/CASIAv2/Gt/Tp_D_NRN_S_N_arc00013_sec00045_11700_gt.png"
         ],
+        ......
         [
-          "/Dataset/CASIAv1/Tp/image2.jpg",
+          "/Dataset/CASIAv2/Au/Au_nat_30198.jpg",
           "Negative"
         ],
         ......

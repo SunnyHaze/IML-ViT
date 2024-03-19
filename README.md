@@ -13,6 +13,7 @@ This repo contains an official PyTorch implementation of our paper: [IML-ViT: Be
 
 
 ## 📰1 News 
+- [2024/03/19] We have received numerous requests concerning datasets such as COVERAGE, primarily due to **resolution discrepancies between images and masks**. Consequently, we have uploaded several IML datasets that have been meticulously corrected to the [IML-Dataset-Corrections](https://github.com/SunnyHaze/IML-Dataset-Corrections) repository for the convenience of the research community.
 - [2023/12/24] Training code released! Welcome to discuss and report the bugs and interesting findings! We will try our best to improve this work.
 - [2023/10/03] 🎉🎉 **Our work that applies Contrastive learning on the image manipulation localization task to solve data insufficiency problem, NCL-IML**, is accepted by ***ICCV2023***! 🎉🎉
   - [[**paper**](https://openaccess.thecvf.com/content/ICCV2023/html/Zhou_Pre-Training-Free_Image_Manipulation_Localization_through_Non-Mutually_Exclusive_Contrastive_Learning_ICCV_2023_paper.html)][[**code**](https://github.com/Knightzjz/NCL-IML)]
@@ -136,6 +137,8 @@ You can use our [Colab demo](https://colab.research.google.com/drive/1SMH0o2tDe2
 
 ## 4 Links
 If you want to train this Model with the CASIAv2 dataset, we provide a revised version of CASIAv2 datasets, which corrected several mistakes in the original datasets provided by the author. Details can be found in the [link](https://github.com/SunnyHaze/CASIA2.0-Corrected-Groundtruth) shown below:
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Sunnyhaze&repo=IML-Dataset-Corrections)]([https://github.com/SunnyHaze/CASIA2.0-Corrected-Groundtruth](https://github.com/SunnyHaze/IML-Dataset-Corrections))
 
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Sunnyhaze&repo=CASIA2.0-Corrected-Groundtruth)](https://github.com/SunnyHaze/CASIA2.0-Corrected-Groundtruth)
 

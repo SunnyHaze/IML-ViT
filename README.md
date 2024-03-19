@@ -41,7 +41,7 @@ Currently, You can follow the tutorial to experience the running pipeline of IML
   - Note that this checkpoint is the 144 epoch trained on CASIAv2's both authentic and manipulated images with NVIDIA 3090 GPUs with batchsize=1.
 - Step 3: You can follow the instructions in [Demo.ipynb](./Demo.ipynb) to see how we pad the images and inference with the IML-ViT. 
 
-### 3.3 Training on your own datasets
+### 3.3 Training on your datasets
 **Now training code for IML-ViT is released!**
 
 First, you may prepare the dataset to fit the protocol of our dataloader for a quick start. Or, you can design your dataloader and modify the corresponding interfaces.
@@ -69,7 +69,7 @@ First, you may prepare the dataset to fit the protocol of our dataloader for a q
 - Both datasets can generate `edge_mask` when specifying the `edge_width` parameter. Then, this dataset will return 3 objects (image, GT, edge mask) while only 2 objects when `edge_width=None`.
 - For inference, returning the actual shape of the original image is crucial. You can set `if_return_shape=True` to get this value. 
 
-Thus, you may revise your dataset like `mani_dataset` or generate a `json` file for each dataset you are willing to train or test. We have prepared the [Naive IML transforms class](./utils/iml_transforms.py) and [edge mask generator class](./utils/edge_generator.py). You can directly call them by using `json_dataset` or `mani_dataset` in [./utils/datasets.py](./utils/datasets.py) to check if your revising is correct.
+Thus, you may revise your dataset like `mani_dataset` or generate a `json` file for each dataset you are willing to train or test. We have prepared the [Naive IML transforms class](./utils/iml_transforms.py) and [edge mask generator class](./utils/edge_generator.py). You can call them directly using `json_dataset` or `mani_dataset` in [./utils/datasets.py](./utils/datasets.py) to check if your revising is correct.
 
 #### 3.3.2 Prepare the Pre-trained Weights
 You may follow the [instructions](./pretrained-weights/mae_download_page.md) to download the Masked Autoencoder pre-trained weights before training. Thanks for their impressive work and their open-source contributions!
@@ -92,7 +92,7 @@ main_train.py \
   --weight_decay 0.05 \
   --edge_lambda 20 \
   --predict_head_norm "BN" \
-  --vit_pretrain_path "<Your path to pretrained weights >/mae_pretrain_vit_base.pth" \
+  --vit_pretrain_path "<Your path to pre-trained weights >/mae_pretrain_vit_base.pth" \
   --test_data_path "<Your custom dataset path>/CASIA1.0" \
   --warmup_epochs 4 \
   --output_dir ./output_dir/ \
@@ -104,7 +104,7 @@ main_train.py \
   2> train_error.log 1>train_log.log
 ```
 `data_path` is for training dataset
-`test_data_path` is for testing dataset during training process
+`test_data_path` is for testing dataset during the training process
 `vit_pretrain_path` is the path for MAE pre-trained ViT weights
 
 You should modify the path in `<>` to your custom path. The default settings are generally recommended training parameters, but if you have a more powerful device, increasing the batch size and adjusting other parameters appropriately is also acceptable.
@@ -138,7 +138,7 @@ You can use our [Colab demo](https://colab.research.google.com/drive/1SMH0o2tDe2
 ## 4 Links
 If you want to train this Model with the CASIAv2 dataset, we provide a revised version of CASIAv2 datasets, which corrected several mistakes in the original datasets provided by the author. Details can be found in the [link](https://github.com/SunnyHaze/IML-Dataset-Corrections) shown below:
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Sunnyhaze&repo=IML-Dataset-Corrections)]([https://github.com/SunnyHaze/CASIA2.0-Corrected-Groundtruth](https://github.com/SunnyHaze/IML-Dataset-Corrections))
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Sunnyhaze&repo=IML-Dataset-Corrections)](https://github.com/SunnyHaze/IML-Dataset-Corrections)
 
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Sunnyhaze&repo=CASIA2.0-Corrected-Groundtruth)](https://github.com/SunnyHaze/CASIA2.0-Corrected-Groundtruth)
 

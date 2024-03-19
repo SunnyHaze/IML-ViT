@@ -136,7 +136,7 @@ We recommend you monitor the training process with the following measures:
 You can use our [Colab demo](https://colab.research.google.com/drive/1SMH0o2tDe2CLvvIACA1-Ej2lRNDBRfyj?usp=sharing) or [offline demo](./Demo.ipynb) to check the performance of our powerful IML-ViT model. The only difference is to replace the default checkpoint with your own.
 
 ## 4 Links
-If you want to train this Model with the CASIAv2 dataset, we provide a revised version of CASIAv2 datasets, which corrected several mistakes in the original datasets provided by the author. Details can be found in the [link](https://github.com/SunnyHaze/CASIA2.0-Corrected-Groundtruth) shown below:
+If you want to train this Model with the CASIAv2 dataset, we provide a revised version of CASIAv2 datasets, which corrected several mistakes in the original datasets provided by the author. Details can be found in the [link](https://github.com/SunnyHaze/IML-Dataset-Corrections) shown below:
 
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Sunnyhaze&repo=IML-Dataset-Corrections)]([https://github.com/SunnyHaze/CASIA2.0-Corrected-Groundtruth](https://github.com/SunnyHaze/IML-Dataset-Corrections))
 

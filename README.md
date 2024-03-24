@@ -13,6 +13,7 @@ This repo contains an official PyTorch implementation of our paper: [IML-ViT: Be
 
 
 ## 📰1 News 
+- [2024/03/24] We released the latest IML-ViT checkpoint, including a better CASIAv2 trianed checkpoint and a [CAT-Net](https://github.com/mjkwon2021/CAT-Net) protocol checkpoint ([TruFor](https://github.com/grip-unina/TruFor) also follow this protocol). The default checkpoint for our Google Colab Demo will be replaced with them. Download links: [Google Drive](https://drive.google.com/drive/folders/1Ztyiy2cKJVmyusYMUlwuyPecBefTJCPT?usp=sharing) or [Baidu NetDisk](https://pan.baidu.com/s/1IqyJdFLUo9bXEhvqOJkvvg?pwd=2k0o).
 - [2024/03/19] We have received numerous requests concerning datasets such as COVERAGE, primarily due to **resolution discrepancies between images and masks**. Consequently, we have uploaded several IML datasets that have been meticulously corrected to the [IML-Dataset-Corrections](https://github.com/SunnyHaze/IML-Dataset-Corrections) repository for the convenience of the research community.
 - [2023/12/24] Training code released! Welcome to discuss and report the bugs and interesting findings! We will try our best to improve this work.
 - [2023/10/03] 🎉🎉 **Our work that applies Contrastive learning on the image manipulation localization task to solve data insufficiency problem, NCL-IML**, is accepted by ***ICCV2023***! 🎉🎉
@@ -37,8 +38,7 @@ PyTorch 1.11
 Currently, You can follow the tutorial to experience the running pipeline of IML-ViT. The only difference from the Colab version is the lack of a playground for testing online images.
 
 - Step 1: You should install the packages in [requirements.txt](./requirements.txt) with `pip install -r requirements.txt` first.
-- Step 2: You should download the pre-trained IML-ViT weights from [Google Drive](https://drive.google.com/file/d/1xXJGJPW1i5j9Pc1JKd7fJmIAQkvt9jY7/view?usp=sharing) or [Baidu NetDisk](https://pan.baidu.com/s/1V-l1C6jCLBQTobrJcXDl7g?pwd=s835) and place them as `./checkpoints/iml-vit_checkpoint.pth`. 
-  - Note that this checkpoint is the 144 epoch trained on CASIAv2's both authentic and manipulated images with NVIDIA 3090 GPUs with batchsize=1.
+- Step 2: You should download the pre-trained IML-ViT weights from [Google Drive](https://drive.google.com/drive/folders/1Ztyiy2cKJVmyusYMUlwuyPecBefTJCPT?usp=sharing) or [Baidu NetDisk](https://pan.baidu.com/s/1IqyJdFLUo9bXEhvqOJkvvg?pwd=2k0o) and place the checkpoint you selected as `./checkpoints/iml-vit_checkpoint.pth`. 
 - Step 3: You can follow the instructions in [Demo.ipynb](./Demo.ipynb) to see how we pad the images and inference with the IML-ViT. 
 
 ### 3.3 Training on your datasets

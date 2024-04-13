@@ -156,4 +156,13 @@ If you find our work interesting or helpful, please don't hesitate to give us a 
 ```
 
 ****
+
+## 6 Statistic of This Repo
+
+<div align="center"> 
+  
+[![Star History Chart](https://api.star-history.com/svg?repos=SunnyHaze/IML-ViT&type=Date)](https://star-history.com/#SunnyHaze/IML-ViT&Date)
+
+</div>
+
 <div align="center"> <a href="https://info.flagcounter.com/9Etf"><img src="https://s11.flagcounter.com/countxl/9Etf/bg_FFFFFF/txt_000000/border_CCCCCC/columns_3/maxflags_12/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a> </div>

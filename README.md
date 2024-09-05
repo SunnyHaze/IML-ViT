@@ -97,7 +97,7 @@ main_train.py \
   --warmup_epochs 4 \
   --output_dir ./output_dir/ \
   --log_dir ./output_dir/  \
-  --accum_iter 32 \
+  --accum_iter 8 \
   --seed 42 \
   --test_period 4 \
   --num_workers 4 \

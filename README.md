@@ -13,6 +13,7 @@ This repo contains an official PyTorch implementation of our paper: [IML-ViT: Be
 
 
 ## 📰1 News 
+- [2024/09/28] 🎉🎉Our latest work [IMDL-BenCo](https://github.com/scu-zjz/IMDLBenCo), a modular codebase and benchmark for image manipulation detection/localization has been accepted by ***NeurIPS 2024*** Dataset and Benchmark Track as ***spotlight***! Welcome to follow!🎉🎉
 - [2024/03/24] We released the latest IML-ViT checkpoint, including a better CASIAv2 trianed checkpoint and a [CAT-Net](https://github.com/mjkwon2021/CAT-Net) protocol checkpoint ([TruFor](https://github.com/grip-unina/TruFor) also follow this protocol). The default checkpoint for our Google Colab Demo will be replaced with them. Download links: [Google Drive](https://drive.google.com/drive/folders/1Ztyiy2cKJVmyusYMUlwuyPecBefTJCPT?usp=sharing) or [Baidu NetDisk](https://pan.baidu.com/s/1IqyJdFLUo9bXEhvqOJkvvg?pwd=2k0o).
 - [2024/03/19] We have received numerous requests concerning datasets such as COVERAGE, primarily due to **resolution discrepancies between images and masks**. Consequently, we have uploaded several IML datasets that have been meticulously corrected to the [IML-Dataset-Corrections](https://github.com/SunnyHaze/IML-Dataset-Corrections) repository for the convenience of the research community.
 - [2023/12/24] Training code released! Welcome to discuss and report the bugs and interesting findings! We will try our best to improve this work.

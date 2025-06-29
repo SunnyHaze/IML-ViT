@@ -984,7 +984,7 @@ class SimpleFeaturePyramid(nn.Module):
     An sequetial implementation of Simple-FPN in 'vitdet' paper.
     """
     def __init__(self,
-        in_feature_shape,
+        input_dim,
         out_channels,
         scale_factors,
         input_stride = 16,
@@ -1007,7 +1007,7 @@ class SimpleFeaturePyramid(nn.Module):
         """
         super().__init__()
         
-        _, dim, H, W = in_feature_shape
+        dim= input_dim
         self.dim = dim
         self.scale_factors = scale_factors
         

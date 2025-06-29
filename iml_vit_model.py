@@ -81,7 +81,7 @@ class iml_vit_model(nn.Module):
         
         # simple feature pyramid network
         self.featurePyramid_net = SimpleFeaturePyramid(
-            in_feature_shape= (1, embed_dim, 256, 256),
+            input_dim=embed_dim,
             out_channels= fpn_channels,
             scale_factors=fpn_scale_factors,
             top_block=LastLevelMaxPool(),
@@ -121,7 +121,14 @@ class iml_vit_model(nn.Module):
     
     def forward(self, x:torch.Tensor, masks, edge_masks, shape= None):
         x = self.encoder_net(x)
+        
+        print(x['last_feat'].shape, "shape after encoder net")
+
         x = self.featurePyramid_net(x)
+        for k in x.keys():
+            print(k)
+            print(x[k].shape)
+        # print(x.shape, "shape after SFPN")
         feature_list = []
         for k, v in x.items():
             feature_list.append(v)
@@ -142,6 +149,10 @@ class iml_vit_model(nn.Module):
         
         return predict_loss, mask_pred, edge_loss
 
+if __name__ == "__main__":
+    x = torch.randn(1, 3, 1024, 1024)
+    model = iml_vit_model()
+    y = model(x, x[:, 0:1] ,x[:, 0:1])
 
         
     
